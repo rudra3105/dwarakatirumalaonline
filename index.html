@@ -197,22 +197,178 @@
 
     <main>
         <!-- slider-area_3-start -->
-        <div class="slider-area_4 slider__overlay-3 position-relative" data-background="assets/img/Hero1.webp">
-            <div class="container">
-                <div class="flider-3">
-                    <h2>Dwaraka Tirumala Online Services</h2>
-                    <div class="flider__btn mt-40">
-                        <div class="flider-bnt1 mr-20 mb-20"><a class="s-btn" href="about.html">get started</a></div>
-                        
-                    </div>
-                    <div class="home-arrow home-arrow-3">
-                        <a href="#peacing-area" class="smoth-scroll">
-                                <i class="fal fa-long-arrow-down"></i>
-                            </a>
-                    </div>
-                </div>
+        <!-- Slider HTML -->
+<div class="slider-area_4 slider__overlay-3 position-relative">
+  <div class="slider-wrapper">
+    <!-- Slide 1 -->
+    <div class="single-slider active" style="background-image: url('assets/img/Hero1.webp');">
+      <div class="container">
+        <div class="flider-3">
+          <h2>Dwaraka Tirumala Online Services</h2>
+          <div class="flider__btn mt-40">
+            <div class="flider-bnt1 mr-20 mb-20">
+              <a class="s-btn" href="about.html">get started</a>
             </div>
+          </div>
+          <div class="home-arrow home-arrow-3">
+            <a href="#peacing-area" class="smoth-scroll">
+              <i class="fal fa-long-arrow-down"></i>
+            </a>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="single-slider" style="background-image: url('assets/img/Hero2.png');">
+      <div class="container">
+        <div class="flider-3">
+          <h2>Book Comfortable Rooms Near Temple</h2>
+          <div class="flider__btn mt-40">
+            <div class="flider-bnt1 mr-20 mb-20">
+              <a class="s-btn" href="services.html">our services</a>
+            </div>
+          </div>
+          <div class="home-arrow home-arrow-3">
+            <a href="#peacing-area" class="smoth-scroll">
+              <i class="fal fa-long-arrow-down"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="single-slider" style="background-image: url('assets/img/Hero3.png');">
+      <div class="container">
+        <div class="flider-3">
+          <h2>Delicious Veg Catering Services for Events</h2>
+          <div class="flider__btn mt-40">
+            <div class="flider-bnt1 mr-20 mb-20">
+              <a class="s-btn" href="contact.html">contact us</a>
+            </div>
+          </div>
+          <div class="home-arrow home-arrow-3">
+            <a href="#peacing-area" class="smoth-scroll">
+              <i class="fal fa-long-arrow-down"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Inline CSS -->
+<style>
+  .slider-area_4 {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .single-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+  }
+
+  .single-slider.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .flider-3 {
+    color: #fff;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .flider-3 h2 {
+    font-size: 60px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+  }
+
+  .s-btn {
+    background-color: #f4a740;
+    color: white;
+    padding: 14px 36px;
+    border-radius: 30px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+
+  .s-btn:hover {
+    background-color: #e89320;
+  }
+
+  .home-arrow a {
+    font-size: 32px;
+    color: white;
+    display: inline-block;
+    margin-top: 25px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+
+  /* Responsive Font Adjustments */
+  @media (max-width: 768px) {
+    .flider-3 h2 {
+      font-size: 38px;
+    }
+
+    .s-btn {
+      font-size: 16px;
+      padding: 12px 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .flider-3 h2 {
+      font-size: 28px;
+    }
+
+    .s-btn {
+      font-size: 15px;
+      padding: 10px 24px;
+    }
+  }
+</style>
+
+<!-- JS Slider Auto-Switch -->
+<script>
+  const slides = document.querySelectorAll('.single-slider');
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }, 5000); // Change slide every 5 seconds
+</script>
+
+
         <!-- slider-area_3-end -->
 
           <!-- causes-area-start -->
@@ -486,7 +642,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="peacing-img w-img mb-30">
-                            <img src="assets/img/About.png" alt="" style="width: 500px;">
+                            <img src="assets/img/A" alt="" style="width: 500px;">
                         </div>
                     </div>
                     
